@@ -34,17 +34,6 @@ const io = new IntersectionObserver(
 );
 document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
 
-// ===== Presentation tabs =====
-document.querySelectorAll("#presTabs .pres-tab").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    document.querySelectorAll("#presTabs .pres-tab").forEach((b) => b.classList.remove("active"));
-    document.querySelectorAll(".pres-pane").forEach((p) => p.classList.remove("active"));
-    btn.classList.add("active");
-    const pane = document.querySelector(`.pres-pane[data-pane="${btn.dataset.tab}"]`);
-    if (pane) pane.classList.add("active");
-  });
-});
-
 // ===== i18n =====
 const LANGS = [
   { code: "pt", label: "Português", short: "PT", html: "pt-BR" },
